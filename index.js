@@ -1,15 +1,25 @@
+// check if app is in production
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
+
 // require npms
 const express = require('express');
 const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/hdticket';
+
+
 
 // require mongoose schema
 const Ticket = require('./models/tickets');
 
+
+// local db url 'mongodb://localhost:27017/hdticket'
 // connect to mongodb hdticket
-mongoose.connect('mongodb://localhost:27017/hdticket');
+mongoose.connect(dbUrl);
 
 // get middleware ready to use
 app.use(express.static('public'));
