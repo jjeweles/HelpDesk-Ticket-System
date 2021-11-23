@@ -89,9 +89,9 @@
                     <span class="prioritymed"><%= ticket.prioritymed %></span>
                     <span class="priorityhigh"><%= ticket.priorityhigh %></span><br />
                     <strong>Date Opened:</strong>
-                    <%= ticket.createdAt.toLocaleString([], { timeZone: 'US/Central' }, {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'}, 'en-US')%> CST<br />
+                    <%= ticket.createdAt.toLocaleString({ timeZone: 'US/Central' }, {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', timeZoneName: 'short'}, 'en-US')%> CST<br />
                     <strong>Ticket Updated:</strong>
-                    <%= ticket.updatedAt.toLocaleString([], { timeZone: 'US/Central' }, {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'}, 'en-US')%> CST<br />
+                    <%= ticket.updatedAt.toLocaleString([], { timeZone: 'US/Central' }, {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', timeZoneName: 'short'}, 'en-US')%> CST<br />
                     <strong>Entered by:</strong> <%= ticket.name %><br />
                     <strong>Issue Location:</strong> <%= ticket.helparea %><br />
                     <strong>Description:</strong> <pre class="mx-5 displayDesc"><%= ticket.issuetext %></pre>
