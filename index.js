@@ -77,7 +77,10 @@ app.post('/', async (req, res) => {
     res.redirect('/');
 })
 
+// declare heroku port or 3000 for local
+const port = process.env.PORT || 3000;
+
 // just listening for a port to be open
-app.listen(3000, () => {
-    console.log('Listening On Port 3000');
+app.listen(port, () => {
+    console.log(`Listening On Port ${port}`);
 });
